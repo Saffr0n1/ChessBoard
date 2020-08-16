@@ -29,7 +29,27 @@ function InitHashKeys() {
     sideKey = randKey();
 }
 
+function InitSizeSwap() {
+    let sq64 = 0;
+    for (i = 0; i < BOARD_SQUARES; ++i) {
+        Swap120To64[i] = 999;
+    }
+    for (i = 0; i < 64; ++i) {
+        Swap64To120[i] = 999;
+    }
+
+    for (r = RANK.RANK_1; r <= RANK.RANK_8; ++r) {
+        for (f = FILE.FILE_A; f <= FILE.FILE_H; ++f) {
+            s = FileRankRes(f, r);
+            Swap64To120[sq64] = s;
+            Swap120To64[s] = sq64;
+            sq64++;
+        }
+    }
+}
+
 function init() {
     InitFileRank();
     InitHashKeys();
+    InitSizeSwap();
 }

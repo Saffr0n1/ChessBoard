@@ -11,8 +11,8 @@ const RANK = {
 }
 
 const FILE = {
-    FILE_1: 0, FILE_2: 1, FILE_3: 2, FILE_4: 3, FILE_5: 4,
-    FILE_6: 5, FILE_7: 6, FILE_8: 7, FILE_N: 8
+    FILE_A: 0, FILE_B: 1, FILE_C: 2, FILE_D: 3, FILE_E: 4,
+    FILE_F: 5, FILE_G: 6, FILE_H: 7, FILE_N: 8
 }
 
 const COLS = {
@@ -62,3 +62,14 @@ function randKey() {
 var pieceKeys = new Array(1680);
 var sideKey;
 var castleKeys = new Array(16);
+
+var Swap120To64 = new Array(120);
+var Swap64To120 = new Array(64);
+
+function S64(item) {
+    return Swap120To64[(item)];
+}
+
+function S120(item) {
+    return Swap64To120[(item)];
+}
