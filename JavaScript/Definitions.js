@@ -38,29 +38,20 @@ function FileRankRes(f, r) {
     return (f + 21 + 10 * r)
 }
 
-const nonPawn = [BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE,
-    BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE];
-const rkq = [BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE,
-    BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE];
-const bn = [BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE,
-    BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE];
+const nonPawn = [false, false, true, true, true, true, true, false, true, true, true, true, true];
+const rkq = [false, false, false, false, true, true, true, false, false, false, true, true, true];
+const bn = [false, false, true, true, false, false, false, false, true, true, false, false, false];
 
 // Using Stockfish endgame values for piece worth
 const valPiece = [0, 100, 416, 441, 663, 1292, 1000000, 100, 416, 441, 663, 1292, 1000000];
 
 const colPiece = [COLS.BOTH, COLS.WHITE, COLS.WHITE, COLS.WHITE, COLS.WHITE, COLS.WHITE, COLS.WHITE,
     COLS.BLACK, COLS.BLACK, COLS.BLACK, COLS.BLACK, COLS.BLACK, COLS.BLACK];
-const PiecePawn = [BOOL.FALSE, BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE,
-    BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE];
-const PieceKnight = [BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE,
-    BOOL.FALSE, BOOL.TRUE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE];
-const PieceKing = [BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE,
-    BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE];
-const PieceRQ = [BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE,
-    BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE];
-const PieceBQ = [BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.FALSE, BOOL.TRUE,
-    BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.FALSE, BOOL.TRUE, BOOL.FALSE];
-const PieceSlides = [BOOL.FALSE, BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE,
-    BOOL.FALSE, BOOL.FALSE, BOOL.TRUE, BOOL.TRUE, BOOL.TRUE, BOOL.FALSE];
+const PiecePawn = [false, true, false, false, false, false, false, true, false, false, false, false, false];
+const PieceKnight = [false, false, true, false, false, false, false, false, true, false, false, false, false];
+const PieceKing = [false, false, false, false, false, false, true, false, false, false, false, false, true];
+const PieceRQ = [false, false, false, false, true, true, false, false, false, false, true, true, false];
+const PieceBQ = [false, false, false, true, false, true, false, false, false, true, false, true, false];
+const PieceSlides = [false, false, false, true, true, true, false, false, false, true, true, true, false];
 
 
