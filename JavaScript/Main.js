@@ -19,6 +19,17 @@ function InitFileRank() {
     }
 }
 
+function InitHashKeys() {
+    for (i = 0; i < 1680; ++i) {
+        pieceKeys[i] = randKey();
+    }
+    for (i = 0; i < 16; ++i) {
+        castleKeys[i] = randKey();
+    }
+    sideKey = randKey();
+}
+
 function init() {
     InitFileRank();
+    InitHashKeys();
 }

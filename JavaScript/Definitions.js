@@ -54,4 +54,11 @@ const PieceRQ = [false, false, false, false, true, true, false, false, false, fa
 const PieceBQ = [false, false, false, true, false, true, false, false, false, true, false, true, false];
 const PieceSlides = [false, false, false, true, true, true, false, false, false, true, true, true, false];
 
+function randKey() {
+    return (Math.floor((Math.random()*255)+1)<<23) | (Math.floor((Math.random()*255)+1)<<16)
+        | (Math.floor((Math.random()*255)+1)<<8) | Math.floor((Math.random()*255)+1);
+}
 
+var pieceKeys = new Array(1680);
+var sideKey;
+var castleKeys = new Array(16);
