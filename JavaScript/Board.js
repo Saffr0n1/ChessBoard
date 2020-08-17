@@ -22,7 +22,7 @@ function posKey() {
     for (i = 0; i < BOARD_SQUARES; ++i) {
         pieces = GameBoard.pieces[i];
         if (pieces != PIECE.EMPTY && pieces != KEY_SQ.OFF) {
-            finalPosKey ^= pieceKeys[120*pieces + i];
+            finalPosKey ^= pieceKeys[120 * pieces + i];
         }
     }
     if (GameBoard.side == COLS.WHITE) {
@@ -33,7 +33,23 @@ function posKey() {
     }
 
     finalPosKey ^= castleKeys[GameBoard.castleCheck];
-    return finalPosKey
+    return finalPosKey;
+}
+
+function ResetBoard() {
+    for (i = 0; i < BOARD_SQUARES; ++i) {
+        GameBoard.pieces[i] = KEY_SQ.OFF;
+    }
+    for (i = 0; i < 64; ++i) {
+        GameBoard.pieces[S120(i)] = PIECE.EMPTY;
+    }
+
+    GameBoard.side = COLS.BOTH;
+    GameBoard.enPass = KEY_SQ.NO_SQ;
+    GameBoard.tieFiftyMove = 0;
+    GameBoard.histCount = 0;
+    GameBoard.castleCheck = 0;
+    GameBoard.posKey = 0;
 }
 
 

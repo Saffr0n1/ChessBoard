@@ -1,5 +1,5 @@
 # ChessBoard
-A fully functional JavaScript chessboard. 
+A fully functional JavaScript chessboard; mostly done as a JS learning experience for myself!
 
 This is a standalone chessboard with functions for piece movement, board clear, and other QOL commands. 
 
