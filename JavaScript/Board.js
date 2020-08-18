@@ -52,4 +52,40 @@ function ResetBoard() {
     GameBoard.posKey = 0;
 }
 
+function PrintBoard() {
+
+	var sq,file,rank,piece;
+
+	console.log("\nGame Board:\n");
+	for(rank = RANK.RANK_8; rank >= RANK.RANK_1; rank--) {
+		var line =(rankCharacters[rank] + "  ");
+		for(file = FILE.FILE_A; file <= FILE.FILE_H; file++) {
+			sq = FileRankRes(file,rank);
+			piece = GameBoard.pieces[sq];
+			line += (" " + pieceCharacters[piece] + " ");
+		}
+		console.log(line);
+	}
+
+	console.log("");
+	var line = "   ";
+	for(file = FILE.FILE_A; file <= FILE.FILE_H; file++) {
+		line += (' ' + fileCharacters[file] + ' ');
+	}
+
+	console.log(line);
+	console.log("side:" + sideCharacters[GameBoard.side] );
+	console.log("enPas:" + GameBoard.enPass);
+	line = "";
+
+	if(GameBoard.castleCheck & CAN_CASTLE.WK) line += 'K';
+	if(GameBoard.castleCheck & CAN_CASTLE.WQ) line += 'Q';
+	if(GameBoard.castleCheck & CAN_CASTLE.BK) line += 'k';
+	if(GameBoard.castleCheck & CAN_CASTLE.BQ) line += 'q';
+	console.log("castle:" + line);
+	console.log("key:" + GameBoard.posKey.toString(16));
+}
+
+
+
 

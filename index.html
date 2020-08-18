@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>ChessBoard</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <script type="text/javascript"></script>
 </head>
 <body>
-<header>
-    <h2>ChessBoard</h2>
-</header>
-
-<div>
-    Fen:<br/>
-    <input/>
-    <button type="button">Set Position</button>
+<div id="topArea">
+    <h2 id="mainHead">ChessBoard</h2>
+    <div id="board"></div>
+    <div id="fen">
+        FEN:
+        <input type="text" id="fenIn"/>
+        <button type="button" id="fenButton">Set Position</button>
+    </div>
+    <div id="controls">
+        <button type="button" id="ngButton">New Game</button>
+        <button type="button" id="swapButton">Swap Sides</button>
+        <button type="button" id="backButton">Take Back</button>
+    </div>
 </div>
+
 
 <script src="JavaScript/jquery-3.5.1.min.js"></script>
 <script src="JavaScript/Definitions.js"></script>
 <script src="JavaScript/Board.js"></script>
+<script src="JavaScript/Pretty.js"></script>
 <script src="JavaScript/FENParser.js"></script>
 <script src="JavaScript/Main.js"></script>
 

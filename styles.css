@@ -1,0 +1,38 @@
+#fen {
+    position: relative;
+    margin: auto;
+    width: 40%;
+    top: 40px;
+}
+
+#fenIn {
+    width: 40%;
+}
+
+#mainHead {
+    position: relative;
+    margin: auto;
+    width: 40%;
+}
+
+#topArea {
+    position: relative;
+    margin: auto;
+}
+
+#board {
+    position: relative;
+    margin: auto;
+    width: 40%;
+    padding-top: 40%;
+    border-style: solid;
+    border-width: 2px;
+    top: 20px;
+}
+
+#controls {
+    position: relative;
+    margin: auto;
+    width: 40%;
+    padding-top: 60px;
+}

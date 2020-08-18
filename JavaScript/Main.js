@@ -1,5 +1,8 @@
 $(function () {
     init();
+    console.log("Main Init Called");
+    translateFEN(startFEN);
+    PrintBoard();
 });
 
 // First, we want all off-board squares to be labeled as such

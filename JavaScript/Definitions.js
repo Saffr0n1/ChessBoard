@@ -59,12 +59,12 @@ function randKey() {
         | (Math.floor((Math.random()*255)+1)<<8) | Math.floor((Math.random()*255)+1);
 }
 
-var pieceKeys = new Array(1680);
-var sideKey;
-var castleKeys = new Array(16);
+let pieceKeys = new Array(1680);
+let sideKey;
+let castleKeys = new Array(16);
 
-var Swap120To64 = new Array(120);
-var Swap64To120 = new Array(64);
+let Swap120To64 = new Array(120);
+let Swap64To120 = new Array(64);
 
 function S64(item) {
     return Swap120To64[(item)];
@@ -72,4 +72,15 @@ function S64(item) {
 
 function S120(item) {
     return Swap64To120[(item)];
+}
+
+const startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+
+const pieceCharacters = ".PNBRQKpnbrqk";
+const sideCharacters = "wb-";
+const rankCharacters = "12345678";
+const fileCharacters = "abcdefgh";
+
+function pieceHelper(piece, numPiece) {
+    return(10*piece + numPiece);
 }
